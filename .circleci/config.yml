@@ -10,7 +10,9 @@ jobs:
       - checkout
       - run:
           command: |
+            pip install --upgrade pip
             pip install pytest
+            pip install requests
             pytest --junitxml=test-results/junit.xml gettestrepo.py
       - store_test_results:
           path: test-results
